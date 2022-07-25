@@ -11,9 +11,9 @@ import com.rsantosp.app.item.models.Producto;
 @FeignClient(name = "servicio-productos")
 public interface ProductoClienteRest {
 
-	@GetMapping("/productos")
+	@GetMapping("/listar")
 	public List<Producto> listar();
 	
-	@GetMapping("/productos/{id}")
+	@GetMapping("/ver/{id}")
 	public Producto detalle(@PathVariable Long id);
 }

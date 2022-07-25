@@ -25,7 +25,7 @@ public class ProductoController {
 //	@Value("${server.port}")
 //	private Integer port; // Recuperamos el parametro del properties de manera directa
 	
-	@GetMapping("/productos")
+	@GetMapping("/listar")
 	public List<Producto> listar(){
 		return productoService.findAll().stream().map(p -> {
 			p.setPort(Integer.parseInt(env.getProperty("local.server.port")));
@@ -34,7 +34,7 @@ public class ProductoController {
 		}).collect(Collectors.toList());
 	}
 	
-	@GetMapping("/productos/{id}")
+	@GetMapping("/ver/{id}")
 	public Producto detalle(@PathVariable Long id) {
 		Producto producto = productoService.findById(id);
 		producto.setPort(Integer.parseInt(env.getProperty("local.server.port")));
