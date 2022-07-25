@@ -17,4 +17,4 @@ spring:  application:    name: servicio-gateway-server
         predicates:
           - Path=/api/items/**
         filters:
-          - StripPrefix=2
+          - StripPrefix=2          - AddRequestHeader=token-request, 12345       # Filtro predefinido para añadir contenido en la cabecera de la solicitud al servicio          - AddResponseHeader=token-response, 67890     # Filtro predefinido para añadir contenido en la cabecera de la respuesta al cliente          - SetResponseHeader=Content-Type, text/plain  # Filtro predefinido para editar contenido en la cabecera de la respuesta al cliente          - AddRequestParameter=nombre, Andres          # Filtro predefinido para añadir parametros en la solicitud a los servicios
