@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.rsantosp.app.item.models.Producto;
 
-@FeignClient(name = "servicio-productos", url = "localhost:8001")
+@FeignClient(name = "servicio-productos")
 public interface ProductoClienteRest {
 
-	@GetMapping("/productos")
+	@GetMapping("/listar")
 	public List<Producto> listar();
 	
-	@GetMapping("/productos/{id}")
+	@GetMapping("/ver/{id}")
 	public Producto detalle(@PathVariable Long id);
 }
